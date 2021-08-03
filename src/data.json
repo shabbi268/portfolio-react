@@ -1,0 +1,161 @@
+{
+    "header": {
+        "name": "Shabarish Kesa",
+        "title": "Software Engineer",
+        "showProfilePic": false,
+        "cvLink": "https://www.slideshare.net/shabarishshabbi/resume-242733657",
+        "linkedIn": "https://www.linkedin.com/in/shabarish-kesa/",
+        "stackOverflow": "",
+        "facebook": "",
+        "instagram": "",
+        "github": "https://github.com/shabbi268"
+    },
+    "modules": [
+        {
+            "type": "about",
+            "data": {
+                "about": "I'm Shabarish, I hold a MS in Information Technology. Creative programmer with professional working experience in the software development life cycle using the agile methodology. I have held responsible positions from the requirements stage to development and testing.",
+                "education": {
+                    "title": "Education",
+                    "data": [
+                    {
+                        "title": "Masters Information Technology",
+                        "institute": "University of Cincinnati",
+                        "startingYear": "2019",
+                        "endingYear": "2021"
+                    },
+                    {
+                        "title": "BTech Electronics",
+                        "institute": "SRM University",
+                        "startingYear": "2013",
+                        "endingYear": "2017"
+                    }]
+                }
+            },
+            "title": "About"
+        },
+        {
+            "type": "workExperience",
+            "data": [
+                {
+                    "company": "Predictronics Inc.",
+                    "title": "Software Engineer",
+                    "startingYear": 2021,
+                    "endingYear": null,
+                    "showWorkplaceName": false,
+                    "showWorkplaceImage": false
+                },
+                {
+                    "company": "Jersey Watch",
+                    "title": "Front End React Developer",
+                    "startingYear": 2021,
+                    "endingYear": 2021,
+                    "showWorkplaceName": false,
+                    "showWorkplaceImage": false
+                },
+                {
+                    "company": "IT Solution Center",
+                    "title": "Full Stack Software Developer",
+                    "startingYear": 2019,
+                    "endingYear": 2021,
+                    "showWorkplaceName": false,
+                    "showWorkplaceImage": false
+                },
+                {
+                    "company": "Infosys",
+                    "title": "Senior Systems Engineer",
+                    "startingYear": 2017,
+                    "endingYear": 2019,
+                    "showWorkplaceName": false,
+                    "showWorkplaceImage": false
+                }
+            ],
+            "title": "My Work Experience"
+        },
+        {
+            "type": "whatIKnow",
+            "data": [
+                {
+                    "logo": "react",
+                    "name": "React",
+                    "type": "Component frameworks / libraries",
+                    "isCurrentlyUsing": true
+                },
+                {
+                    "logo": "angular",
+                    "name": "Angular",
+                    "type": "Component frameworks / libraries",
+                    "isCurrentlyUsing": false
+                },
+                {
+                    "logo": "jest",
+                    "name": "Jest",
+                    "type": "Testing frameworks",
+                    "isCurrentlyUsing": true
+                },
+                {
+                    "logo": "nodejs",
+                    "name": "nodejs",
+                    "type": "Backend",
+                    "isCurrentlyUsing": true
+                },
+                {
+                    "logo": "styled-components",
+                    "name": "Styled Components",
+                    "type": "UI and Styling",
+                    "isCurrentlyUsing": true
+                },
+                {
+                    "logo": "js",
+                    "name": "JavaScript",
+                    "type": "Languages / Supersets",
+                    "isCurrentlyUsing": true
+                },
+                {
+                    "logo": "typescript",
+                    "name": "TypeScript",
+                    "type": "Languages / Supersets",
+                    "isCurrentlyUsing": true
+                },
+                {
+                    "logo": "java",
+                    "name": "Java",
+                    "type": "Languages / Supersets",
+                    "isCurrentlyUsing": false
+                },
+                {
+                    "logo": "mysql",
+                    "name": "MySQL",
+                    "type": "Databases",
+                    "isCurrentlyUsing": false
+                },
+                {
+                    "logo": "mui",
+                    "name": "Material UI",
+                    "type": "UI frameworks",
+                    "isCurrentlyUsing": false
+                }
+            ],
+            "display": "both",
+            "title": "What I Know (and use)"
+        },
+        {
+            "type": "volunteering",
+            "data": [
+                {
+                    "title": "Tech-Career",
+                    "description": "Tutoring and mentoring students in Web and other CS topics",
+                    "startingYear": "2020",
+                    "endingYear": null
+                },
+                {
+                    "title": "Sahar.org.il",
+                    "description": "Building a landing page for the group",
+                    "startingYear": "2015",
+                    "endingYear": "2015"
+                }
+            ],
+            "title": "Volunteer Work"
+        }
+    ]
+}
