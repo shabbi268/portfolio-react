@@ -17,7 +17,6 @@ export interface ICertificationsProps extends IModuleBase {
 }
 
 const Certifications = ({data, display, title, index}: ICertificationsProps) => {
-    console.log(data, display, title, index);
     const [isList, setIsList] = useState(display === ECertificationsDisplay.LIST);
 
     return (
