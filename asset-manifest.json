@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "https://myapp.herokuapp.com/static/css/main.99a66b89.chunk.css",
+    "main.js": "https://myapp.herokuapp.com/static/js/main.f7da444d.chunk.js",
+    "main.js.map": "https://myapp.herokuapp.com/static/js/main.f7da444d.chunk.js.map",
+    "runtime-main.js": "https://myapp.herokuapp.com/static/js/runtime-main.e76edeca.js",
+    "runtime-main.js.map": "https://myapp.herokuapp.com/static/js/runtime-main.e76edeca.js.map",
+    "static/js/2.8c835bbb.chunk.js": "https://myapp.herokuapp.com/static/js/2.8c835bbb.chunk.js",
+    "static/js/2.8c835bbb.chunk.js.map": "https://myapp.herokuapp.com/static/js/2.8c835bbb.chunk.js.map",
+    "index.html": "https://myapp.herokuapp.com/index.html",
+    "static/css/main.99a66b89.chunk.css.map": "https://myapp.herokuapp.com/static/css/main.99a66b89.chunk.css.map",
+    "static/js/2.8c835bbb.chunk.js.LICENSE.txt": "https://myapp.herokuapp.com/static/js/2.8c835bbb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e76edeca.js",
+    "static/js/2.8c835bbb.chunk.js",
+    "static/css/main.99a66b89.chunk.css",
+    "static/js/main.f7da444d.chunk.js"
+  ]
+}
