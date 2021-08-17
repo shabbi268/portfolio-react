@@ -29,7 +29,7 @@ const StyledCertificationItem = styled.div`
 
 const CertificationItem = ({title, year, src, showCertificationImage = false}: ICertificationItemProps) => {
     return (
-        <StyledCertificationItem style={{border: "solid 2px white", borderRadius: "5px", padding: "5px"}}>
+        <StyledCertificationItem style={{margin: "10px", padding: "5px"}}>
             <h3 style={{fontWeight: 600}}>{title}</h3>
             <span>{year}</span>
             <span>
