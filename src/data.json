@@ -186,6 +186,60 @@
             "title": "What I Know (and use)"
         },
         {
+            "type": "certifications",
+            "data": [
+                {
+                    "title": "HackerRank - JavaScript",
+                    "description": "JavaScript",
+                    "year": "2021",
+                    "src": "https://www.hackerrank.com/certificates/7cf7ac240724"
+                },
+                {
+                    "title": "TypeScript",
+                    "description": "TypeScript",
+                    "year": "2019",
+                    "src": "https://drive.google.com/file/d/13ly75qUD5myy0NLZVhk83maVqqxF6PJL/view"
+                },
+                {
+                    "title": "HackerRank - React Framework",
+                    "description": "ReactJS",
+                    "year": "2021",
+                    "src": "https://www.hackerrank.com/certificates/17aa9bce8c7b"
+                },
+                {
+                    "title": "HackerRank - SQL",
+                    "description": "SQL",
+                    "year": "2021",
+                    "src": "https://www.hackerrank.com/certificates/3717134187be"
+                },
+                {
+                    "title": "Learning DBMS and SQL",
+                    "description": "Learning DBMS and SQL",
+                    "year": "2019",
+                    "src": "https://drive.google.com/file/d/1lp14ieuKWIoYALurDjYJL5GchDV996Pz/view"
+                },
+                {
+                    "title": "Programming Fundamentals using Python",
+                    "description": "Programming Fundamentals using Python",
+                    "year": "2018",
+                    "src": "https://drive.google.com/file/d/1--HvtK8VhskjKlKEOeJGR6ZK5qcZLRZt/view"
+                },
+                {
+                    "title": "Object Oriented Programming using Python",
+                    "description": "Object Oriented Programming using Python",
+                    "year": "2018",
+                    "src": "https://drive.google.com/file/d/13RfdSHErnFYGHQt-ZIOQvG3X_VLnuZnJ/view"
+                },
+                {
+                    "title": "DataStructures and Algorithms using Python",
+                    "description": "DataStructures and Algorithms using Python",
+                    "year": "2018",
+                    "src": "https://drive.google.com/file/d/15SIl-qqjVXoZ4vqaa6u--F6ee88TYnns/view"
+                }
+            ],
+            "title": "Certifications"
+        },
+        {
             "type": "volunteering",
             "data": [
                 {
