@@ -14,7 +14,7 @@ const VolunteerWork = ({data, title, index}: IVolunteerWorkProps) => {
                 <StyledBackgroundCover fadeAmount={40} />
                 <StyledBackgroundTopper>
                 <StyledTitle>{title}</StyledTitle>
-                {data.map(vi => <VolunteerItem title={vi.title} description={vi.description} />)}
+                {data.map((vi, index) => <VolunteerItem title={vi.title} description={vi.description} key={index} />)}
             </StyledBackgroundTopper>
         </StyledCommonSection>
     )
