@@ -33,12 +33,13 @@ const StyledWorkplaceDates = styled.div`
     padding-bottom: .5em;
 `;
 
-const WorkplaceItem = ({company, title, startingYear, endingYear, showWorkplaceName = false, showWorkplaceImage = false, src, isLast = false }: IWorkplace & {isLast: boolean}) => {
+const WorkplaceItem = ({company, title, startingYear, endingYear, showWorkplaceName = false, showWorkplaceImage = false, src, isLast = false, location }: IWorkplace & {isLast: boolean}) => {
     return (
         <StyledWorkplaceItem>
             {showWorkplaceImage && <img src={src} alt={company.toLowerCase()} />}
             {showWorkplaceName && company}
             <StyledWorkplaceTitle>{title}</StyledWorkplaceTitle>
+            <StyledWorkplaceTitle>{location}</StyledWorkplaceTitle>
             <StyledWorkplaceDates>{startingYear} - {endingYear ?? 'Present'}</StyledWorkplaceDates>
             {!isLast && <StyledWorkplaceLine />}
         </StyledWorkplaceItem>

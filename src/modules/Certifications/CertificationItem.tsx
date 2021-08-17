@@ -30,7 +30,7 @@ const StyledCertificationItem = styled.div`
 const CertificationItem = ({title, year, src, showCertificationImage = false}: ICertificationItemProps) => {
     return (
         <StyledCertificationItem style={{margin: "10px", padding: "5px"}}>
-            <h3 style={{fontWeight: 600}}>{title}</h3>
+            <h3 style={{fontWeight: 500}}>{title}</h3>
             <span>{year}</span>
             <span>
                 {src && <Button className="" colorScheme="gray" style={{fontSize: "14px", border: "2px solid", margin: "6px"}} _hover={{color: themeConfig[config.theme].darker}} _pressed={{color: themeConfig[config.theme].darker}} onClick={() => window.open(src)} mt="4" variant="outline" size="md">See Credential</Button>}

@@ -53,7 +53,8 @@
                     "endingYear": null,
                     "showWorkplaceName": false,
                     "showWorkplaceImage": true,
-                    "src": "https://i.ytimg.com/vi/ndcyqVL1jGg/maxresdefault.jpg"
+                    "src": "https://i.ytimg.com/vi/ndcyqVL1jGg/maxresdefault.jpg",
+                    "location": "Cincinnati, USA"
                 },
                 {
                     "company": "Rogue Fitness",
@@ -62,7 +63,8 @@
                     "endingYear": 2021,
                     "showWorkplaceName": false,
                     "showWorkplaceImage": true,
-                    "src": "https://www.roguefitness.com/media/wysiwyg/rogue-schema-logo-large.jpg"
+                    "src": "https://www.roguefitness.com/media/wysiwyg/rogue-schema-logo-large.jpg",
+                    "location": "Columbus, USA"
                 },
                 {
                     "company": "Jersey Watch",
@@ -71,7 +73,8 @@
                     "endingYear": 2021,
                     "showWorkplaceName": false,
                     "showWorkplaceImage": true,
-                    "src": "https://www.cincychic.com/wp-content/uploads/2015/11/113015CAREER1.png"
+                    "src": "https://www.cincychic.com/wp-content/uploads/2015/11/113015CAREER1.png",
+                    "location": "Cincinnati, USA"
                 },
                 {
                     "company": "IT Solution Center",
@@ -80,7 +83,8 @@
                     "endingYear": 2021,
                     "showWorkplaceName": false,
                     "showWorkplaceImage": true,
-                    "src": "https://itsc-flipbook.cech.uc.edu/img/ITSC.085546d9.png"
+                    "src": "https://itsc-flipbook.cech.uc.edu/img/ITSC.085546d9.png",
+                    "location": "Cincinnati, USA"
                 },
                 {
                     "company": "Infosys",
@@ -89,7 +93,8 @@
                     "endingYear": 2019,
                     "showWorkplaceName": false,
                     "showWorkplaceImage": true,
-                    "src": "https://mma.prnewswire.com/media/633365/Infosys_Logo.jpg?p=facebook"
+                    "src": "https://mma.prnewswire.com/media/633365/Infosys_Logo.jpg?p=facebook",
+                    "location": "Chennai, India"
                 }
             ],
             "title": "My Work Experience"

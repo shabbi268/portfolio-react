@@ -12,6 +12,7 @@ export interface IWorkplace {
     showWorkplaceName?: boolean;
     showWorkplaceImage?: boolean;
     src?: string;
+    location?: string;
 }
 export interface IWorkExperienceProps extends IModuleBase {
     data: IWorkplace[];
