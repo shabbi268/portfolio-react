@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Badge, Tooltip } from '@chakra-ui/react';
 import { config, themeConfig } from '../../config';
 
+
 const StyledWhatIKnowItem = styled.div`
     margin: 0 2em;
     position: relative;
