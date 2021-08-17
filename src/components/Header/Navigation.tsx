@@ -25,7 +25,7 @@ const Navigation = ({modules}: INavigationProps) => {
             {isNavOpen && <Drawer placement="left" isOpen={isNavOpen} onClose={() => setIsNavOpen(false)} motionPreset="scale">
                 <DrawerOverlay />
                 <DrawerContent>
-                <DrawerHeader borderBottomWidth="1px">Nir Tzezana</DrawerHeader>
+                <DrawerHeader borderBottomWidth="1px">Shabarish Kesa</DrawerHeader>
                 <DrawerBody>
                     {modules.map((module, index) => <Button as="a" href={`#module-${index}`} onClick={() => setIsNavOpen(false)} colorScheme={themeConfig[config.theme].color} variant="ghost" css={{display: 'flex', width: '100%'}} my={4} >{module.title}</Button>)}
                 </DrawerBody>
