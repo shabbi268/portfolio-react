@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import data from './data.json';
 import About, { IAboutProps } from './modules/About/About';
 import VolunteerWork, { IVolunteerWorkProps } from './modules/VolunteerWork/VolunteerWork';
+import Certifications, { ICertificationsProps } from './modules/Certifications/Certifications';
 import WhatIKnow, { IWhatIKnowProps } from './modules/WhatIKnow/WhatIKnow';
 import WorkExperience, { IWorkExperienceProps } from './modules/WorkExperience/WorkExperience';
 
@@ -20,7 +21,8 @@ export enum Module {
   ABOUT = "about",
   WORK_EXPERIENCE = "workExperience",
   WHAT_I_KNOW = "whatIKnow",
-  VOLUNTEERING = "volunteering"
+  VOLUNTEERING = "volunteering",
+  CERTIFICATIONS="certifications"
 }
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
               return <WhatIKnow {...module as Omit<IWhatIKnowProps,'index'>} index={index} key={index} />
             case Module.VOLUNTEERING:
               return <VolunteerWork {...module as Omit<IVolunteerWorkProps,'index'>} index={index} key={index} />
+            case Module.CERTIFICATIONS:
+              return <Certifications {...module as Omit<ICertificationsProps,'index'>} index={index} key={index} />
             default:
               return <></>
           }
