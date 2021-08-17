@@ -23,6 +23,14 @@ const About = ({data, title, index}: IAboutProps) => {
             <StyledAbout>
                 <StyledTitle>{title}</StyledTitle>
                 <StyledParagraph paddingTop="0">{data.about}</StyledParagraph>
+                {data.linkedInBio.map((item: any) => {
+                    return (
+                        <div>
+                        <StyledSecondaryTitle>{item.title}</StyledSecondaryTitle>
+                        <StyledParagraph paddingTop="0">{item.content}</StyledParagraph>
+                        </div>
+                    )
+                })}
                 <StyledSecondaryTitle>{data.education.title}</StyledSecondaryTitle>
                 {data.education.data.map((edu: IEducationItem) => 
                     <EducationItem title={edu.title} institute={edu.institute} startingYear={edu.startingYear} endingYear={edu.endingYear} />

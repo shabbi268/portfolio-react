@@ -40,16 +40,17 @@ export interface IWhatIKnowItem {
     name: string;
     type?: EWhatIKnowItemType;
     isCurrentlyUsing?: boolean;
+    src?: string;
 }
 
-const WhatIKnowItem = ({logo, name, isCurrentlyUsing = false}: IWhatIKnowItem) => {
+const WhatIKnowItem = ({logo, name, isCurrentlyUsing = false, src}: IWhatIKnowItem) => {
     return (
         <StyledWhatIKnowItem>
             {isCurrentlyUsing && <StyledBadgeContainer>
                 <Badge variant="solid" colorScheme="red">Using</Badge>
             </StyledBadgeContainer>}
             <Tooltip gutter={16} hasArrow label={name} bg={themeConfig[config.theme].darker} placement="top">
-                <img src={`./assets/usages/${logo}.png`} alt={name} />   
+                <img src={src} alt={name} />   
             </Tooltip>
         </StyledWhatIKnowItem>
     )

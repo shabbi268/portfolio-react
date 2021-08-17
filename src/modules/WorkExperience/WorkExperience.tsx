@@ -11,6 +11,7 @@ export interface IWorkplace {
     endingYear: number | null;
     showWorkplaceName?: boolean;
     showWorkplaceImage?: boolean;
+    src?: string;
 }
 export interface IWorkExperienceProps extends IModuleBase {
     data: IWorkplace[];

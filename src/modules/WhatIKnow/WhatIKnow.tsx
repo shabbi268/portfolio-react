@@ -42,7 +42,7 @@ const WhatIKnow = ({data, display, title, index}: IWhatIKnowProps) => {
                 !isList ?
                 <Marquee speed={50} pauseOnHover={true}>
                     {data.map((item, index) => 
-                        <WhatIKnowItem key={index} logo={item.logo} name={item.name} isCurrentlyUsing={item.isCurrentlyUsing} />
+                        <WhatIKnowItem key={index} logo={item.logo} name={item.name} src={item.src} isCurrentlyUsing={item.isCurrentlyUsing} />
                     )}
                 </Marquee> :
                 <StyledWhatIKnowList>

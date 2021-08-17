@@ -11,6 +11,8 @@ interface IHeaderProps {
         title: string;
         showProfilePic: boolean;
         cvLink: string | null;
+        portfolioLink: string | null;
+        learningBlog: string | null;
         linkedIn?: string;
         stackOverflow?: string;
         facebook?: string;
@@ -62,14 +64,18 @@ const StyledSocialLinks = styled.div`
 `;
 
 
-const Header = ({data: {name, title, showProfilePic, cvLink, linkedIn, stackOverflow, facebook, instagram, github}, modules}:IHeaderProps) => {
+const Header = ({data: {name, title, showProfilePic, cvLink, portfolioLink, learningBlog, linkedIn, stackOverflow, facebook, instagram, github}, modules}:IHeaderProps) => {
     return (
         <StyledHeader>
             <Navigation modules={modules} />
             {showProfilePic && <StyledImage src="./assets/profile.jpg" />}
             <StyledName>{name}</StyledName>
             <StyledWorkTitle>{title}</StyledWorkTitle>
-            {cvLink && <Button colorScheme="gray" style={{color: "black", border: "2px solid"}} _hover={{color: themeConfig[config.theme].darker}} _pressed={{color: themeConfig[config.theme].darker}} onClick={() => window.open(cvLink)} mt="4" variant="outline" size="md">Download my CV</Button>}
+            <div className="headerButtons">
+            {cvLink && <Button className="" colorScheme="gray" style={{color: "black", border: "2px solid", margin: "6px"}} _hover={{color: themeConfig[config.theme].darker}} _pressed={{color: themeConfig[config.theme].darker}} onClick={() => window.open(cvLink)} mt="4" variant="outline" size="md">Download my CV</Button>}
+            {portfolioLink && <Button colorScheme="gray" style={{color: "black", border: "2px solid", margin: "6px"}} _hover={{color: themeConfig[config.theme].darker}} _pressed={{color: themeConfig[config.theme].darker}} onClick={() => window.open(portfolioLink)} mt="4" variant="outline" size="md">Portfolio</Button>}
+            {learningBlog && <Button colorScheme="gray" style={{color: "black", border: "2px solid", margin: "6px"}} _hover={{color: themeConfig[config.theme].darker}} _pressed={{color: themeConfig[config.theme].darker}} onClick={() => window.open(learningBlog)} mt="4" variant="outline" size="md">My Learning Blog</Button>}
+            </div>
             {(github || linkedIn || instagram || facebook || stackOverflow) && <StyledSocialLinks>
                {github && <Link style={{backgroundColor: "black", borderRadius: "18px"}} href={github} isExternal={true}><GithubIcon /></Link>}
                {linkedIn && <Link style={{backgroundColor: "black", borderRadius: "8px"}} href={linkedIn} isExternal={true}><LinkedInIcon /></Link>}
