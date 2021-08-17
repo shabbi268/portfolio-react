@@ -192,7 +192,8 @@
                     "title": "HackerRank - JavaScript",
                     "description": "JavaScript",
                     "year": "2021",
-                    "src": "https://www.hackerrank.com/certificates/7cf7ac240724"
+                    "src": "https://www.hackerrank.com/certificates/7cf7ac240724",
+                    "showCertificationImage": false
                 },
                 {
                     "title": "TypeScript",
@@ -237,6 +238,7 @@
                     "src": "https://drive.google.com/file/d/15SIl-qqjVXoZ4vqaa6u--F6ee88TYnns/view"
                 }
             ],
+            "display": "both",
             "title": "Certifications"
         },
         {
