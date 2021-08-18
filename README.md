@@ -49,3 +49,9 @@ Follow the below steps to use docker-compose to run the application in one step:
 - Run the below command to build and run the application:
     `docker-compose up -d --build`
 - The above command takes care of building image, creating and running the container.
+
+### Pulling the Image from Docker Hub and Running the application
+- Run the below command to pull the latest Docker Image to your local computer
+    `docker pull kesash/cloud_poster:version1`
+- Run the below command to run the instance of the pulled container
+    `docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true kesash/cloud_poster:version1`
