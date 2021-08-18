@@ -42,6 +42,7 @@ Follow the below instructions if you want to run the application in an docker co
     `docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true <CHOOSE_IMAGE_NAME_ABOVE>`
 - Now the docker image is created and container instance is up and running.
 - Go to the `http://localhost:3001/` and you should see the app running.
+- Make sure you go to above url at `3001` because we proxied the port 3000 to 3001 of docker virtual port.
 
 ### Docker-Compose way:
 Follow the below steps to use docker-compose to run the application in one step:
