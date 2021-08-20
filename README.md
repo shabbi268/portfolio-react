@@ -1,18 +1,28 @@
-# 🚀 React-Portfolio 🚀
+# React-Portfolio
 
 React portfolio using Chakra-UI, Material-UI developed in TypeScript.
 
 Watch in action: [Click here](https://react-portfolio-538e5shw2-shabbi268.vercel.app/).
 
+# Intro
+
+- 👋 Hi, I’m Shabarish Kesa, Currently working as a Software Engineer at Predictronics Corp.
+- 👀 I’m interested in solving problems using technology
+- 🌱 I’m currently learning Docker, Docker-Compose, Linux Server Management.
+- 💞️ I’m looking to collaborate on software development projects
+- 📫 Reach me at shabarish.shabbi@gmail.com
+
+I am a Full-stack developer with expertise in frontend. I love working with various frameworks and libraries and get my work done
+
+<a href="https://app.daily.dev/K2513388"><img src="https://api.daily.dev/devcards/43b0e5887920437b801305f8093fdcc0.png?r=h0q" width="400" alt="Kesa Shabarish's Dev Card"/></a>
+
 ## Table of Contents
 
-- [Installation](#installation)
-- [Customization](#usage)
+- [Setup](#setup)
+- [Customization](#Customization)
 - [Themes](#themes)
-- [Support](#support)
-- [Contributing](#contributing)
 
-## Installation
+## Setup
 
 Install in 5 easy steps
 
