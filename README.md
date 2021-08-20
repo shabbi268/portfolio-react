@@ -18,7 +18,7 @@ I am a Full-stack developer with expertise in frontend. I love working with vari
 
 ## Table of Contents
 
-- [Installation](#setup)
+- [Setup](#setup)
 - [Customization](#Customization)
 - [Themes](#themes)
 
