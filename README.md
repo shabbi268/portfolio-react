@@ -2,7 +2,7 @@
 
 React portfolio using Chakra-UI, Material-UI developed in TypeScript.
 
-Watch in action: [Click here](https://react-portfolio-538e5shw2-shabbi268.vercel.app/).
+Watch in action: [Click here](https://shabarish-kesa-react-portfolio.vercel.app/).
 
 # Intro
 
