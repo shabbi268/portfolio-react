@@ -16,11 +16,11 @@
         {
             "type": "about",
             "data": {
-                "about": "Hello! I am Shabarish Kesa, currently working as a Software Engineer at Predictronics Inc., I hold a Master's degree in Information Technology from University of Cincinnati and Bachelor's degree from SRM University. Creative programmer with professional working experience in the software development life cycle using the agile methodology. I have held responsible positions from the requirements stage to development and testing.",
+                "about": "Creative and Enthusiastic full stack web developer 👨‍💻 with 5+ years of working experience in the software development life cycle using the agile methodology. I have held responsible positions from the requirements stage to development, maintainane and operations, systems support, devops, server management and testing",
                 "linkedInBio": [
                     {
                         "title": "Areas of expertise",
-                        "content": "Full-stack web development using Javascript, Typescript, Node Js, React Js, Angular JS/2+, VueJs, GraphQL, Redux, Material-UI, MySQL, PostgreSQL, Mongo.",
+                        "content": "Full-stack web development using Javascript, Typescript, Node Js, React Js, Angular JS/2+, VueJs, GraphQL, Redux, Material-UI, MySQL, PostgreSQL, Mongo, Docker, AWS EC2, Knex, Bookshelf.",
                         "isLink": false
                     }
                 ],
