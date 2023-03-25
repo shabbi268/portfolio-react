@@ -68,11 +68,11 @@ const Header = ({data: {name, title, showProfilePic, cvLink, portfolioLink, lear
     return (
         <StyledHeader>
             <Navigation modules={modules} />
-            {showProfilePic && <StyledImage src="./assets/profile.jpg" />}
+            {showProfilePic && <StyledImage src="./assets/profile.jpeg" />}
             <StyledName>{name}</StyledName>
             <StyledWorkTitle>{title}</StyledWorkTitle>
             <div className="headerButtons">
-            {cvLink && <Button className="" colorScheme="gray" style={{color: "black", border: "2px solid", margin: "6px"}} _hover={{color: themeConfig[config.theme].darker}} _pressed={{color: themeConfig[config.theme].darker}} onClick={() => window.open(cvLink)} mt="4" variant="outline" size="md">Download my CV</Button>}
+            {cvLink && <Button className="" colorScheme="gray" style={{color: "black", border: "2px solid", margin: "6px"}} _hover={{color: themeConfig[config.theme].darker}} _pressed={{color: themeConfig[config.theme].darker}} onClick={() => window.open(cvLink)} mt="4" variant="outline" size="md">Resume</Button>}
             {portfolioLink && <Button colorScheme="gray" style={{color: "black", border: "2px solid", margin: "6px"}} _hover={{color: themeConfig[config.theme].darker}} _pressed={{color: themeConfig[config.theme].darker}} onClick={() => window.open(portfolioLink)} mt="4" variant="outline" size="md">Portfolio</Button>}
             {learningBlog && <Button colorScheme="gray" style={{color: "black", border: "2px solid", margin: "6px"}} _hover={{color: themeConfig[config.theme].darker}} _pressed={{color: themeConfig[config.theme].darker}} onClick={() => window.open(learningBlog)} mt="4" variant="outline" size="md">My Learning Blog</Button>}
             </div>

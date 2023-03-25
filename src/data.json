@@ -2,9 +2,9 @@
     "header": {
         "name": "Shabarish Kesa",
         "title": "Software Engineer",
-        "showProfilePic": false,
+        "showProfilePic": true,
         "cvLink": "https://www.slideshare.net/shabarishshabbi/shabarish-kesa-resumenew",
-        "portfolioLink": "https://shabarishkesa.weebly.com/",
+        "portfolioLink": "https://shabarishkesa.com/",
         "learningBlog": "https://mylearningeveryday.weebly.com/",
         "linkedIn": "https://www.linkedin.com/in/shabarish-kesa/",
         "stackOverflow": "",
@@ -225,20 +225,20 @@
                     "src": "https://drive.google.com/file/d/1lp14ieuKWIoYALurDjYJL5GchDV996Pz/view"
                 },
                 {
-                    "title": "Programming Fundamentals using Python",
-                    "description": "Programming Fundamentals using Python",
+                    "title": "Programming using Python",
+                    "description": "Programming using Python",
                     "year": "2018",
                     "src": "https://drive.google.com/file/d/1--HvtK8VhskjKlKEOeJGR6ZK5qcZLRZt/view"
                 },
                 {
-                    "title": "Object Oriented Programming using Python",
-                    "description": "Object Oriented Programming using Python",
+                    "title": "OOP using Python",
+                    "description": "OOP using Python",
                     "year": "2018",
                     "src": "https://drive.google.com/file/d/13RfdSHErnFYGHQt-ZIOQvG3X_VLnuZnJ/view"
                 },
                 {
-                    "title": "DataStructures and Algorithms using Python",
-                    "description": "DataStructures and Algorithms using Python",
+                    "title": "DS and Algorithms using Python",
+                    "description": "DS and Algorithms using Python",
                     "year": "2018",
                     "src": "https://drive.google.com/file/d/15SIl-qqjVXoZ4vqaa6u--F6ee88TYnns/view"
                 }

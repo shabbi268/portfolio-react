@@ -20,7 +20,7 @@ export interface IWorkExperienceProps extends IModuleBase {
 
 const WorkExperience = ({data, title, index}: IWorkExperienceProps) => {
     return (
-        <StyledCommonSection backgroundUrl={`./assets/themes/${config.theme}/1.jpg`} id={`module-${index}`}>
+        <StyledCommonSection id={`module-${index}`}>
             <StyledBackgroundCover fadeAmount={40} />
                 <StyledBackgroundTopper>
                 <StyledTitle>{title}</StyledTitle>
