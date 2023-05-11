@@ -4,7 +4,7 @@
         "title": "Software Engineer",
         "showProfilePic": true,
         "cvLink": "https://www.slideshare.net/shabarishshabbi/shabarish-kesa-resumenew",
-        "portfolioLink": "https://shabarishkesa.weebly.com/",
+        "portfolioLink": "https://shabarishkesa.com/",
         "learningBlog": "https://mylearningeveryday.weebly.com/",
         "linkedIn": "https://www.linkedin.com/in/shabarish-kesa/",
         "stackOverflow": "",
@@ -250,19 +250,37 @@
             "type": "volunteering",
             "data": [
                 {
-                    "title": "Aarush 2016",
-                    "description": "One of the organizer for the national level technical fest",
-                    "startingYear": "2016",
-                    "endingYear": null
+                    "title": "Resume Upload Application",
+                    "description": "Developed a Full stack application using React, Node, PostgreSQL, HTML, CSS, and hosted on Heroku. The application uses basic GET/PUT/POST/DELETE Http requests.",
+                    "startingYear": "2019",
+                    "endingYear": "2019"
+                },
+                {
+                    "title": "Burger Builder",
+                    "description": "The application is based on React Js and uses a cloud firebase database for HTTP Calls.",
+                    "startingYear": "2020",
+                    "endingYear": "2020"
                 },
                 {
                     "title": "Employee Management Application",
-                    "description": "Building a Employee Management Application",
+                    "description": "Building a Employee Management Application as my final year project. Using ReactJS, Express, Firebase, and Axios hosted on Heroku.",
+                    "startingYear": "2021",
+                    "endingYear": "2021"
+                },
+                {
+                    "title": "Portfolio Using React/Typescript",
+                    "description": "Using ReactJS, TS, Material-UI, Chakra-UI hosted on Vercel",
+                    "startingYear": "2021",
+                    "endingYear": "2021"
+                },
+                {
+                    "title": "Coach Finder Using VueJS",
+                    "description": "Using VueJS, Vuex, Vuex-router, Axios and Firebase cloud database",
                     "startingYear": "2021",
                     "endingYear": "2021"
                 }
             ],
-            "title": "Volunteer Work"
+            "title": "Personal Projects"
         }
     ]
 }
