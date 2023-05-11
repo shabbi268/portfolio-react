@@ -14,6 +14,7 @@ import WhatIKnow, { IWhatIKnowProps } from "./modules/WhatIKnow/WhatIKnow";
 import WorkExperience, {
   IWorkExperienceProps,
 } from "./modules/WorkExperience/WorkExperience";
+// eslint-disable-next-line import/no-unresolved
 import { Analytics } from '@vercel/analytics/react';
 
 const StyledApp = styled.div`
