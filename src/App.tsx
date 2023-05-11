@@ -1,13 +1,20 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import Header from './components/Header/Header';
-import { ChakraProvider } from '@chakra-ui/react';
-import data from './data.json';
-import About, { IAboutProps } from './modules/About/About';
-import VolunteerWork, { IVolunteerWorkProps } from './modules/VolunteerWork/VolunteerWork';
-import Certifications, { ICertificationsProps } from './modules/Certifications/Certifications';
-import WhatIKnow, { IWhatIKnowProps } from './modules/WhatIKnow/WhatIKnow';
-import WorkExperience, { IWorkExperienceProps } from './modules/WorkExperience/WorkExperience';
+import React from "react";
+import styled from "@emotion/styled";
+import Header from "./components/Header/Header";
+import { ChakraProvider } from "@chakra-ui/react";
+import data from "./data.json";
+import About, { IAboutProps } from "./modules/About/About";
+import VolunteerWork, {
+  IVolunteerWorkProps,
+} from "./modules/VolunteerWork/VolunteerWork";
+import Certifications, {
+  ICertificationsProps,
+} from "./modules/Certifications/Certifications";
+import WhatIKnow, { IWhatIKnowProps } from "./modules/WhatIKnow/WhatIKnow";
+import WorkExperience, {
+  IWorkExperienceProps,
+} from "./modules/WorkExperience/WorkExperience";
+import { Analytics } from '@vercel/analytics/react';
 
 const StyledApp = styled.div`
   width: 100vw;
@@ -22,32 +29,65 @@ export enum Module {
   WORK_EXPERIENCE = "workExperience",
   WHAT_I_KNOW = "whatIKnow",
   VOLUNTEERING = "volunteering",
-  CERTIFICATIONS="certifications"
+  CERTIFICATIONS = "certifications",
 }
 
 function App() {
   return (
-    <ChakraProvider>
-      <StyledApp>
-        <Header data={data.header} modules={data.modules} />
-        {data.modules.map((module, index) => {
-          switch (module.type) {
-            case Module.ABOUT:
-              return <About {...module as Omit<IAboutProps,'index'>} index={index} key={index} />
-            case Module.WORK_EXPERIENCE:
-              return <WorkExperience {...module as Omit<IWorkExperienceProps,'index'>} index={index} key={index} />
-            case Module.WHAT_I_KNOW:
-              return <WhatIKnow {...module as Omit<IWhatIKnowProps,'index'>} index={index} key={index} />
-            case Module.VOLUNTEERING:
-              return <VolunteerWork {...module as Omit<IVolunteerWorkProps,'index'>} index={index} key={index} />
-            case Module.CERTIFICATIONS:
-              return <Certifications {...module as Omit<ICertificationsProps,'index'>} index={index} key={index} />
-            default:
-              return <></>
-          }
-        })}
-      </StyledApp>
-    </ChakraProvider>
+    <>
+      <ChakraProvider>
+        <StyledApp>
+          <Header data={data.header} modules={data.modules} />
+          {data.modules.map((module, index) => {
+            switch (module.type) {
+              case Module.ABOUT:
+                return (
+                  <About
+                    {...(module as Omit<IAboutProps, "index">)}
+                    index={index}
+                    key={index}
+                  />
+                );
+              case Module.WORK_EXPERIENCE:
+                return (
+                  <WorkExperience
+                    {...(module as Omit<IWorkExperienceProps, "index">)}
+                    index={index}
+                    key={index}
+                  />
+                );
+              case Module.WHAT_I_KNOW:
+                return (
+                  <WhatIKnow
+                    {...(module as Omit<IWhatIKnowProps, "index">)}
+                    index={index}
+                    key={index}
+                  />
+                );
+              case Module.VOLUNTEERING:
+                return (
+                  <VolunteerWork
+                    {...(module as Omit<IVolunteerWorkProps, "index">)}
+                    index={index}
+                    key={index}
+                  />
+                );
+              case Module.CERTIFICATIONS:
+                return (
+                  <Certifications
+                    {...(module as Omit<ICertificationsProps, "index">)}
+                    index={index}
+                    key={index}
+                  />
+                );
+              default:
+                return <></>;
+            }
+          })}
+        </StyledApp>
+      </ChakraProvider>
+      <Analytics />
+    </>
   );
 }
 
