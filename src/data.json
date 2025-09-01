@@ -260,6 +260,12 @@
             "type": "volunteering",
             "data": [
                 {
+                    "title": "Virtual Paper Trading Application",
+                    "description": "Created a virtual paper trading application with Indian NSE Stock prices fetching using APIs using React, NodeJs, Typescript and Material UI.",
+                    "startingYear": "2025",
+                    "endingYear": "2025"
+                },
+                {
                     "title": "Resume Upload Application",
                     "description": "Developed a Full stack application using React, Node, PostgreSQL, HTML, CSS, and hosted on Heroku. The application uses basic GET/PUT/POST/DELETE Http requests.",
                     "startingYear": "2019",
