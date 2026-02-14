@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import { FacebookIcon, GithubIcon, InstagramIcon, LinkedInIcon, StackOverflowIcon } from '../../common/icons'
-import { config, themeConfig } from '../../config'
 import Navigation from './Navigation'
 
 interface IHeaderProps {

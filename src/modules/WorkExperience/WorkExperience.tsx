@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyledBackgroundCover, StyledBackgroundTopper, StyledCommonSection, StyledTitle } from '../../common/styles'
-import { config } from '../../config'
 import { IModuleBase } from '../../contracts'
 import Workplace from './WorkplaceItem'
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 import { StyledBackgroundCover, StyledBackgroundTopper, StyledCommonSection, StyledTitle } from '../../common/styles'
-import { config } from '../../config'
 import { IModuleBase } from '../../contracts'
 import VolunteerItem, { IVolunteerItemProps } from './VolunteerItem'
 

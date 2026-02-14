@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { config } from '../../config';
 import { StyledBackgroundTopper, StyledCommonSection, StyledTitle } from '../../common/styles'
 import { IModuleBase } from '../../contracts'
 import CertificationItem, { ICertificationItemProps } from './CertificationItem';

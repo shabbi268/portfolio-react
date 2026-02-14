@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import { config, themeConfig } from '../../config';
-
 
 const StyledWhatIKnowItem = styled.div`
     margin: 0 2em;

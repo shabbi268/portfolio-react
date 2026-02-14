@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Marquee from "react-fast-marquee";
 import styled from 'styled-components';
 import { StyledCommonSection, StyledTitle } from '../../common/styles';
-import { config, themeConfig } from '../../config';
 import { IModuleBase } from '../../contracts';
 import WhatIKnowItem, { EWhatIKnowItemType, IWhatIKnowItem } from './WhatIKnowItem';
 import WhatIKnowListGroupContainer from './WhatIKnowListGroupContainer';
