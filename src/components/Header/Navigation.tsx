@@ -22,7 +22,7 @@ const Navigation = ({modules}: INavigationProps) => {
     return (
         <StyledNavigationWrapper>
             <IconButton aria-label="Search database" icon={<HamburgerIcon />} onClick={() => setIsNavOpen(true)} display={{ md: "none" }}/>
-            {isNavOpen && <Drawer placement="left" isOpen={isNavOpen} onClose={() => setIsNavOpen(false)} motionPreset="scale">
+            {isNavOpen && <Drawer placement="left" isOpen={isNavOpen} onClose={() => setIsNavOpen(false)}>
                 <DrawerOverlay />
                 <DrawerContent>
                 <DrawerHeader borderBottomWidth="1px">Shabarish Kesa</DrawerHeader>

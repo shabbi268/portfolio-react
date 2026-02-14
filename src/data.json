@@ -1,7 +1,7 @@
 {
     "header": {
         "name": "Shabarish Kesa",
-        "title": "Senior Software Engineer",
+        "title": "💻 Full Stack Software Engineer",
         "showProfilePic": true,
         "cvLink": "https://www.slideshare.net/shabarishshabbi/shabarish-kesa-resumenew",
         "portfolioLink": "https://shabarishkesa.weebly.com/",
@@ -16,11 +16,11 @@
         {
             "type": "about",
             "data": {
-                "about": "Creative and Enthusiastic full stack web developer 👨‍💻 with 5+ years of working experience in the software development life cycle using the agile methodology. I have held responsible positions from the requirements stage to development, maintainane and operations, systems support, devops, server management and testing. Currently leading the redesign of the entire backend architecture for our web application. I am focused on migrating our database from MongoDB to PostgreSQL, which involves designing the database schema from scratch and analyzing the current database structure to establish new table relationships and also modifying the backend code to ensure compatibility with the new database, ensuring that our application's performance and efficiency are optimized for the new environment.",
+                "about": "A results-driven Software Engineer with 6+ years of experience building secure, scalable, and high-performance web applications and microservices. Currently part of a team developing customer authentication and identity management solutions for T-Mobile, leveraging Node.js (Express/NestJS), Angular, DynamoDB, Redis, MongoDB and TypeScript to power millions of user interactions across digital and assisted channels.\n\nMy work focuses on API design, security (OAuth2, JWT, OpenID Connect), and cloud-native scalability using AWS, while managing both relational and NoSQL databases such as PostgreSQL, MySQL, MongoDB, and DynamoDB. Passionate about building systems that are not only performant and reliable but also maintainable and aligned with best engineering practices.",
                 "linkedInBio": [
                     {
                         "title": "Areas of expertise",
-                        "content": "Full-stack web development using Javascript, Typescript, Node Js, React Js, Angular JS/2+, VueJs, GraphQL, Redux, Material-UI, MySQL, PostgreSQL, Mongo, Docker, AWS EC2, Knex, Bookshelf.",
+                        "content": "Full-stack web development using Javascript, Typescript, Node Js, React Js, Angular JS/2+, VueJs, GraphQL, Redux, Material-UI, MySQL, PostgreSQL, Mongo, DynamoDB, Redis, Docker, AWS, OAuth2, JWT, OpenID Connect, Knex, Bookshelf.",
                         "isLink": false
                     }
                 ],
@@ -41,7 +41,7 @@
                     }]
                 }
             },
-            "title": "About"
+            "title": "👨‍💼 About"
         },
         {
             "type": "workExperience",
@@ -107,7 +107,7 @@
                     "location": "Chennai, India"
                 }
             ],
-            "title": "My Work Experience"
+            "title": "⚙️ My Work Experience"
         },
         {
             "type": "whatIKnow",
@@ -198,7 +198,7 @@
                 }
             ],
             "display": "both",
-            "title": "What I Know (and use)"
+            "title": "🛠️ What I Know (and use)"
         },
         {
             "type": "certifications",
@@ -254,7 +254,7 @@
                 }
             ],
             "display": "both",
-            "title": "Certifications"
+            "title": "📄 Certifications"
         },
         {
             "type": "volunteering",
@@ -263,40 +263,46 @@
                     "title": "Virtual Paper Trading Application",
                     "description": "Created a virtual paper trading application with Indian NSE Stock prices fetching using APIs using React, NodeJs, Typescript and Material UI.",
                     "startingYear": "2025",
-                    "endingYear": "2025"
+                    "endingYear": "2025",
+                    "emoji": "📈"
                 },
                 {
                     "title": "Resume Upload Application",
                     "description": "Developed a Full stack application using React, Node, PostgreSQL, HTML, CSS, and hosted on Heroku. The application uses basic GET/PUT/POST/DELETE Http requests.",
                     "startingYear": "2019",
-                    "endingYear": "2019"
+                    "endingYear": "2019",
+                    "emoji": "📄"
                 },
                 {
                     "title": "Burger Builder",
                     "description": "The application is based on React Js and uses a cloud firebase database for HTTP Calls.",
                     "startingYear": "2020",
-                    "endingYear": "2020"
+                    "endingYear": "2020",
+                    "emoji": "🍔"
                 },
                 {
                     "title": "Employee Management Application",
                     "description": "Building a Employee Management Application as my final year project. Using ReactJS, Express, Firebase, and Axios hosted on Heroku.",
                     "startingYear": "2021",
-                    "endingYear": "2021"
+                    "endingYear": "2021",
+                    "emoji": "👥"
                 },
                 {
                     "title": "Portfolio Using React/Typescript",
                     "description": "Using ReactJS, TS, Material-UI, Chakra-UI hosted on Vercel",
                     "startingYear": "2021",
-                    "endingYear": "2021"
+                    "endingYear": "2021",
+                    "emoji": "🎨"
                 },
                 {
                     "title": "Coach Finder Using VueJS",
                     "description": "Using VueJS, Vuex, Vuex-router, Axios and Firebase cloud database",
                     "startingYear": "2021",
-                    "endingYear": "2021"
+                    "endingYear": "2021",
+                    "emoji": "🏃"
                 }
             ],
-            "title": "Personal Projects"
+            "title": "🚀 Personal Projects"
         }
     ]
 }
