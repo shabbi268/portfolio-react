@@ -7,14 +7,47 @@ import { config, themeConfig } from '../../config';
 const StyledWhatIKnowItem = styled.div`
     margin: 0 2em;
     position: relative;
+    animation: fadeInUp 0.8s ease-out;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-15px) scale(1.08);
+        filter: drop-shadow(0 15px 30px rgba(255, 140, 0, 0.3));
+    }
+
     > img {
         width: 100px;
         opacity: 0.8;
-        transition: .18s all;
+        transition: all 0.3s ease;
         filter: grayscale(90%);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        animation: float 3s ease-in-out infinite;
+
         &:hover {
             opacity: 1;
             filter: grayscale(0%);
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.2);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-8px);
         }
     }
 `;
@@ -24,6 +57,18 @@ const StyledBadgeContainer = styled.div`
     top: .25em;
     left: .25em;
     z-index: 100;
+    animation: pulse 2s ease-in-out infinite;
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+    }
 `;
 
 export enum EWhatIKnowItemType {
