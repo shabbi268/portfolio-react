@@ -8,6 +8,8 @@ import VolunteerWork, { IVolunteerWorkProps } from './modules/VolunteerWork/Volu
 import Certifications, { ICertificationsProps } from './modules/Certifications/Certifications';
 import WhatIKnow, { IWhatIKnowProps } from './modules/WhatIKnow/WhatIKnow';
 import WorkExperience, { IWorkExperienceProps } from './modules/WorkExperience/WorkExperience';
+import BackToTop from './common/BackToTop';
+import ProgressBar from './common/ProgressBar';
 
 const StyledApp = styled.div`
   width: 100vw;
@@ -106,6 +108,7 @@ export enum Module {
 function App() {
   return (
     <ChakraProvider>
+      <ProgressBar />
       <BackgroundDecorations>
         <FloatingElement />
         <FloatingElement />
@@ -131,6 +134,7 @@ function App() {
           }
         })}
       </StyledApp>
+      <BackToTop />
     </ChakraProvider>
   );
 }

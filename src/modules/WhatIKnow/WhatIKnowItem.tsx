@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { useTilt } from '../../common/useTilt';
 
 const StyledWhatIKnowItem = styled.div`
     margin: 0 2em;
@@ -12,11 +13,17 @@ const StyledWhatIKnowItem = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    perspective: 1000px;
+    cursor: pointer;
 
     &:hover {
         transform: translateY(-15px) scale(1.12);
         filter: drop-shadow(0 20px 48px rgba(255, 140, 0, 0.4));
         z-index: 20;
+    }
+
+    &.tilt-active {
+        transform-style: preserve-3d;
     }
 
     > img {
@@ -27,6 +34,7 @@ const StyledWhatIKnowItem = styled.div`
         filter: grayscale(90%);
         border-radius: 10px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transform-style: preserve-3d;
 
         &:hover {
             opacity: 1;
@@ -106,9 +114,13 @@ export interface IWhatIKnowItem {
 
 const WhatIKnowItem = ({logo, name, isCurrentlyUsing = false, src}: IWhatIKnowItem) => {
     const [showTooltip, setShowTooltip] = React.useState(false);
+    const { ref, tilt } = useTilt();
+    const transformStyle = `perspective(1000px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`;
 
     return (
         <StyledWhatIKnowItem 
+            ref={ref}
+            style={{transform: transformStyle}}
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
         >

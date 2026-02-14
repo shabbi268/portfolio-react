@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 import { FacebookIcon, GithubIcon, InstagramIcon, LinkedInIcon, StackOverflowIcon } from '../../common/icons'
 import Navigation from './Navigation'
+import MobileMenu from './MobileMenu'
 
 interface IHeaderProps {
     data: {
@@ -67,9 +68,15 @@ const StyledStickyNavBar = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 20px rgba(255, 140, 0, 0.15);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     z-index: 999;
     animation: slideDown 0.6s ease-out;
+    transition: box-shadow 0.3s ease;
+    border-bottom: 1px solid rgba(255, 140, 0, 0.1);
+
+    &:hover {
+        box-shadow: 0 8px 25px rgba(255, 140, 0, 0.15);
+    }
 
     @keyframes slideDown {
         from {
@@ -84,6 +91,7 @@ const StyledStickyNavBar = styled.nav`
 
     @media (max-width: 768px) {
         padding: 0.8em 1em;
+        gap: 1em;
     }
 `;
 
@@ -178,6 +186,94 @@ const StyledWorkTitle = styled.h2`
         to {
             opacity: 1;
             transform: translate3d(0, 0, 0);
+        }
+    }
+`;
+
+const StyledSubtitle = styled.p`
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 600px;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.31s both;
+    position: relative;
+    z-index: 10;
+    will-change: transform, opacity;
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translate3d(0, 30px, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        margin-top: 0.8em;
+        padding: 0 1em;
+    }
+`;
+
+const StyledStatsContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.33s both;
+    position: relative;
+    z-index: 10;
+    flex-wrap: wrap;
+    will-change: opacity;
+
+    @media (max-width: 768px) {
+        gap: 2em;
+        margin-top: 1.5em;
+    }
+
+    @media (max-width: 480px) {
+        gap: 1.5em;
+    }
+`;
+
+const StyledStat = styled.div`
+    text-align: center;
+    
+    .stat-number {
+        font-size: 36px;
+        font-weight: 700;
+        background: linear-gradient(135deg, rgba(255, 140, 0, 0.9) 0%, rgba(35, 166, 213, 0.9) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.3em;
+        display: block;
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+        .stat-number {
+            font-size: 28px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
         }
     }
 `;
@@ -279,7 +375,7 @@ const StyledButtonsContainer = styled.div`
 `;
 
 const StyledButton = styled.button<{ $position?: 'left' | 'center' | 'right' }>`
-    padding: 0.6em 1.2em;
+    padding: 0.8em 1.5em;
     border: 2px solid rgba(0, 0, 0, 0.3);
     background: rgba(255, 255, 255, 0.1);
     border-radius: 6px;
@@ -288,6 +384,11 @@ const StyledButton = styled.button<{ $position?: 'left' | 'center' | 'right' }>`
     transition: all 0.3s ease;
     color: #000;
     will-change: transform, opacity;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     animation: ${props => {
         if (props.$position === 'left') return 'bounceFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.32s both';
@@ -334,6 +435,23 @@ const StyledButton = styled.button<{ $position?: 'left' | 'center' | 'right' }>`
         transform: scale(1.12);
         box-shadow: 0 12px 32px rgba(255, 140, 0, 0.3);
     }
+
+    &:focus {
+        outline: 2px solid rgba(255, 140, 0, 0.6);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2);
+    }
+
+    &:active {
+        transform: scale(1.08);
+    }
+
+    @media (max-width: 768px) {
+        padding: 0.7em 1.2em;
+        font-size: 13px;
+        min-height: 40px;
+        min-width: 40px;
+    }
 `;
 
 const StyledSocialLink = styled.a`
@@ -342,6 +460,8 @@ const StyledSocialLink = styled.a`
     justify-content: center;
     width: 50px;
     height: 50px;
+    min-width: 44px;
+    min-height: 44px;
     border-radius: 8px;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -362,6 +482,12 @@ const StyledSocialLink = styled.a`
         border-color: rgba(255, 140, 0, 0.6);
         filter: drop-shadow(0 8px 15px rgba(255, 140, 0, 0.3));
     }
+
+    &:focus {
+        outline: 2px solid rgba(255, 140, 0, 0.6);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2);
+    }
     
     @keyframes slideUpFromBottom {
         from {
@@ -373,6 +499,18 @@ const StyledSocialLink = styled.a`
             transform: translate3d(0, 0, 0);
         }
     }
+
+    @media (max-width: 768px) {
+        width: 45px;
+        height: 45px;
+        min-width: 40px;
+        min-height: 40px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
 `;
 
 const Header = ({data: {name, title, showProfilePic, cvLink, portfolioLink, learningBlog, linkedIn, stackOverflow, facebook, instagram, github}, modules}:IHeaderProps) => {
@@ -380,23 +518,39 @@ const Header = ({data: {name, title, showProfilePic, cvLink, portfolioLink, lear
         <>
             <StyledStickyNavBar>
                 <Navigation modules={modules} />
+                <MobileMenu modules={modules} />
             </StyledStickyNavBar>
             <StyledHeader>
-                <StyledAvailabilityBadge>🟢 Open to Projects</StyledAvailabilityBadge>
+                <StyledAvailabilityBadge role="status" aria-live="polite" aria-label="Currently accepting project inquiries">🟢 Open to Projects</StyledAvailabilityBadge>
                 {showProfilePic && <StyledImage src="./assets/profile.jpeg" />}
                 <StyledName>{name}</StyledName>
                 <StyledWorkTitle>{title}</StyledWorkTitle>
-                <StyledButtonsContainer>
-                {cvLink && <StyledButton $position="left" onClick={() => window.open(cvLink)}>📄 Resume</StyledButton>}
-                {portfolioLink && <StyledButton $position="center" onClick={() => window.open(portfolioLink)}>🎨 Portfolio</StyledButton>}
-                {learningBlog && <StyledButton $position="right" onClick={() => window.open(learningBlog)}>📚 My Learning Blog</StyledButton>}
+                <StyledSubtitle>Building secure, scalable, and high-performance web applications with modern architecture and best engineering practices</StyledSubtitle>
+                <StyledStatsContainer>
+                    <StyledStat>
+                        <span className="stat-number">6+</span>
+                        <span className="stat-label">Years Experience</span>
+                    </StyledStat>
+                    <StyledStat>
+                        <span className="stat-number">12+</span>
+                        <span className="stat-label">Projects</span>
+                    </StyledStat>
+                    <StyledStat>
+                        <span className="stat-number">5+</span>
+                        <span className="stat-label">Certifications</span>
+                    </StyledStat>
+                </StyledStatsContainer>
+                <StyledButtonsContainer role="group" aria-label="Call-to-action buttons">
+                {cvLink && <StyledButton $position="left" onClick={() => window.open(cvLink)} aria-label="Download resume in new window">📄 Resume</StyledButton>}
+                {portfolioLink && <StyledButton $position="center" onClick={() => window.open(portfolioLink)} aria-label="View portfolio in new window">🎨 Portfolio</StyledButton>}
+                {learningBlog && <StyledButton $position="right" onClick={() => window.open(learningBlog)} aria-label="Visit learning blog in new window">📚 My Learning Blog</StyledButton>}
                 </StyledButtonsContainer>
-                {(github || linkedIn || instagram || facebook || stackOverflow) && <StyledSocialLinks>
-                   {github && <StyledSocialLink href={github} target="_blank" rel="noopener noreferrer" title="GitHub"><GithubIcon /></StyledSocialLink>}
-                   {linkedIn && <StyledSocialLink href={linkedIn} target="_blank" rel="noopener noreferrer" title="LinkedIn"><LinkedInIcon /></StyledSocialLink>}
-                   {instagram && <StyledSocialLink href={instagram} target="_blank" rel="noopener noreferrer" title="Instagram"><InstagramIcon /></StyledSocialLink>}
-                   {facebook && <StyledSocialLink href={facebook} target="_blank" rel="noopener noreferrer" title="Facebook"><FacebookIcon /></StyledSocialLink>}
-                   {stackOverflow && <StyledSocialLink href={stackOverflow} target="_blank" rel="noopener noreferrer" title="Stack Overflow"><StackOverflowIcon /></StyledSocialLink>}
+                {(github || linkedIn || instagram || facebook || stackOverflow) && <StyledSocialLinks role="group" aria-label="Social media links">
+                   {github && <StyledSocialLink href={github} target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="Visit GitHub profile (opens in new window)"><GithubIcon /></StyledSocialLink>}
+                   {linkedIn && <StyledSocialLink href={linkedIn} target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Visit LinkedIn profile (opens in new window)"><LinkedInIcon /></StyledSocialLink>}
+                   {instagram && <StyledSocialLink href={instagram} target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Visit Instagram profile (opens in new window)"><InstagramIcon /></StyledSocialLink>}
+                   {facebook && <StyledSocialLink href={facebook} target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Visit Facebook profile (opens in new window)"><FacebookIcon /></StyledSocialLink>}
+                   {stackOverflow && <StyledSocialLink href={stackOverflow} target="_blank" rel="noopener noreferrer" title="Stack Overflow" aria-label="Visit Stack Overflow profile (opens in new window)"><StackOverflowIcon /></StyledSocialLink>}
                 </StyledSocialLinks>}
             </StyledHeader>
         </>
