@@ -55,9 +55,9 @@ const StyledProjectCard = styled.div<{ $index?: number }>`
     perspective: 1000px;
     
     &:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
-        background: rgba(255, 255, 255, 0.12);
+        transform: translateY(-12px) scale(1.12);
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
+        background: rgba(255, 255, 255, 0.14);
         border-color: rgba(255, 255, 255, 0.4);
     }
     

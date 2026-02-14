@@ -1,4 +1,3 @@
-import { Button } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import Marquee from "react-fast-marquee";
 import styled from 'styled-components';
@@ -7,6 +6,22 @@ import { config, themeConfig } from '../../config';
 import { IModuleBase } from '../../contracts';
 import WhatIKnowItem, { EWhatIKnowItemType, IWhatIKnowItem } from './WhatIKnowItem';
 import WhatIKnowListGroupContainer from './WhatIKnowListGroupContainer';
+
+const StyledToggleButton = styled.button`
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(0, 0, 0, 0.4);
+    }
+`;
 
 const StyledWhatIKnow = styled.div`
     margin: 3em 0 0 0;
@@ -36,7 +51,7 @@ const WhatIKnow = ({data, display, title, index}: IWhatIKnowProps) => {
     return (
         <StyledCommonSection id={`module-${index}`}>
             <StyledTitle>{title}</StyledTitle>
-            {display === EWhatIKnowDisplay.BOTH && <Button colorScheme={themeConfig[config.theme].color} variant="outline" size="xs" onClick={() => setIsList(!isList)}>{!isList ? 'View as list' : 'View as marquee'}</Button>}
+            {display === EWhatIKnowDisplay.BOTH && <StyledToggleButton onClick={() => setIsList(!isList)}>{!isList ? 'View as list' : 'View as marquee'}</StyledToggleButton>}
             <StyledWhatIKnow>
                 {
                 !isList ?

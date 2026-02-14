@@ -1,4 +1,3 @@
-import { Button, Link, theme } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import React from 'react'
 import { FacebookIcon, GithubIcon, InstagramIcon, LinkedInIcon, StackOverflowIcon } from '../../common/icons'
@@ -59,7 +58,7 @@ const StyledHeader = styled.div`
 `
 
 const StyledName = styled.h1`
-    color: ${theme.colors.black};
+    color: #000;
     font-size: 50px;
     font-weight: 400;
     animation: fadeInDown 1s ease-out;
@@ -80,7 +79,7 @@ const StyledName = styled.h1`
 `
 
 const StyledWorkTitle = styled.h2`
-    color: ${theme.colors.black};
+    color: #000;
     font-size: 25px;
     font-weight: 200;
     animation: fadeInUp 1s ease-out 0.3s both;
@@ -97,7 +96,7 @@ const StyledWorkTitle = styled.h2`
             transform: translateY(0);
         }
     }
-`
+`;
 
 const StyledImage = styled.img`
     width: 150px;
@@ -124,13 +123,19 @@ const StyledImage = styled.img`
 
 const StyledSocialLinks = styled.div`
     display: flex;
-    margin-top: 2em;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5em;
     margin-bottom: 2em;
     position: relative;
     z-index: 10;
     animation: fadeInUp 1s ease-out 0.6s both;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 1em;
+    
     > * {
-        margin: 0 1em;
         transition: all 0.3s ease;
         animation: fadeInUp 1s ease-out 0.7s both;
 
@@ -150,8 +155,135 @@ const StyledSocialLinks = styled.div`
             transform: translateY(0);
         }
     }
+    
+    @media (max-width: 768px) {
+        gap: 1em;
+        margin-top: 1em;
+    }
 `;
 
+const StyledButtonsContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    margin-top: 2.5em;
+    margin-bottom: 1.5em;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    flex-wrap: wrap;
+    padding: 0 1em;
+    
+    @media (max-width: 768px) {
+        gap: 1em;
+        margin-top: 2em;
+    }
+`;
+
+const StyledButton = styled.button<{ $position?: 'left' | 'center' | 'right' }>`
+    padding: 0.6em 1.2em;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #000;
+    
+    animation: ${props => {
+        if (props.$position === 'left') return 'bounceFromLeft 1s ease-out';
+        if (props.$position === 'right') return 'bounceFromRight 1s ease-out';
+        return 'bounceFromCenter 1s ease-out';
+    }};
+    
+    @keyframes bounceFromLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+        70% {
+            transform: translateX(10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    @keyframes bounceFromCenter {
+        0% {
+            opacity: 0;
+            transform: translateY(100px) scale(0.8);
+        }
+        70% {
+            transform: translateY(-5px) scale(1.05);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    @keyframes bounceFromRight {
+        0% {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        70% {
+            transform: translateX(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    &:hover {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: rgba(0, 0, 0, 0.6);
+        transform: scale(1.12);
+        box-shadow: 0 12px 32px rgba(255, 140, 0, 0.3);
+    }
+`;
+
+const StyledSocialLink = styled.a`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.2) 0%, rgba(35, 166, 213, 0.2) 100%);
+    border: 2px solid rgba(255, 140, 0, 0.3);
+    animation: slideUpFromBottom 1s ease-out 0.6s both;
+    
+    svg {
+        width: 24px;
+        height: 24px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+    
+    &:hover {
+        transform: translateY(-5px) scale(1.1);
+        background: linear-gradient(135deg, rgba(255, 140, 0, 0.4) 0%, rgba(35, 166, 213, 0.4) 100%);
+        border-color: rgba(255, 140, 0, 0.6);
+        filter: drop-shadow(0 8px 15px rgba(255, 140, 0, 0.3));
+    }
+    
+    @keyframes slideUpFromBottom {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
 
 const Header = ({data: {name, title, showProfilePic, cvLink, portfolioLink, learningBlog, linkedIn, stackOverflow, facebook, instagram, github}, modules}:IHeaderProps) => {
     return (
@@ -160,17 +292,17 @@ const Header = ({data: {name, title, showProfilePic, cvLink, portfolioLink, lear
             {showProfilePic && <StyledImage src="./assets/profile.jpeg" />}
             <StyledName>{name}</StyledName>
             <StyledWorkTitle>{title}</StyledWorkTitle>
-            <div className="headerButtons">
-            {cvLink && <Button className="" colorScheme="gray" style={{color: "black", border: "2px solid", margin: "6px"}} _hover={{color: themeConfig[config.theme].darker}} _pressed={{color: themeConfig[config.theme].darker}} onClick={() => window.open(cvLink)} mt="4" variant="outline" size="md">Resume</Button>}
-            {portfolioLink && <Button colorScheme="gray" style={{color: "black", border: "2px solid", margin: "6px"}} _hover={{color: themeConfig[config.theme].darker}} _pressed={{color: themeConfig[config.theme].darker}} onClick={() => window.open(portfolioLink)} mt="4" variant="outline" size="md">Portfolio</Button>}
-            {learningBlog && <Button colorScheme="gray" style={{color: "black", border: "2px solid", margin: "6px"}} _hover={{color: themeConfig[config.theme].darker}} _pressed={{color: themeConfig[config.theme].darker}} onClick={() => window.open(learningBlog)} mt="4" variant="outline" size="md">My Learning Blog</Button>}
-            </div>
+            <StyledButtonsContainer>
+            {cvLink && <StyledButton $position="left" onClick={() => window.open(cvLink)}>📄 Resume</StyledButton>}
+            {portfolioLink && <StyledButton $position="center" onClick={() => window.open(portfolioLink)}>🎨 Portfolio</StyledButton>}
+            {learningBlog && <StyledButton $position="right" onClick={() => window.open(learningBlog)}>📚 My Learning Blog</StyledButton>}
+            </StyledButtonsContainer>
             {(github || linkedIn || instagram || facebook || stackOverflow) && <StyledSocialLinks>
-               {github && <Link style={{backgroundColor: "black", borderRadius: "18px"}} href={github} isExternal={true}><GithubIcon /></Link>}
-               {linkedIn && <Link style={{backgroundColor: "black", borderRadius: "8px"}} href={linkedIn} isExternal={true}><LinkedInIcon /></Link>}
-               {instagram && <Link style={{backgroundColor: "black", borderRadius: "4px"}} href={instagram} isExternal={true}><InstagramIcon /></Link>}
-               {facebook && <Link style={{backgroundColor: "black", borderRadius: "4px"}} href={facebook} isExternal={true}><FacebookIcon /></Link>}
-               {stackOverflow && <Link style={{backgroundColor: "black", borderRadius: "4px"}} href={stackOverflow} isExternal={true}><StackOverflowIcon /></Link>}
+               {github && <StyledSocialLink href={github} target="_blank" rel="noopener noreferrer" title="GitHub"><GithubIcon /></StyledSocialLink>}
+               {linkedIn && <StyledSocialLink href={linkedIn} target="_blank" rel="noopener noreferrer" title="LinkedIn"><LinkedInIcon /></StyledSocialLink>}
+               {instagram && <StyledSocialLink href={instagram} target="_blank" rel="noopener noreferrer" title="Instagram"><InstagramIcon /></StyledSocialLink>}
+               {facebook && <StyledSocialLink href={facebook} target="_blank" rel="noopener noreferrer" title="Facebook"><FacebookIcon /></StyledSocialLink>}
+               {stackOverflow && <StyledSocialLink href={stackOverflow} target="_blank" rel="noopener noreferrer" title="Stack Overflow"><StackOverflowIcon /></StyledSocialLink>}
             </StyledSocialLinks>}
         </StyledHeader>
     )

@@ -62,10 +62,10 @@ const StyledCertificationItem = styled.div<{ $index?: number }>`
     }
     
     &:hover {
-        transform: translateY(-12px) scale(1.02);
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
-        border-color: rgba(255, 255, 255, 0.25);
-        background: rgba(255, 255, 255, 0.12);
+        transform: translateY(-12px) scale(1.12);
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
+        border-color: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.14);
     }
     
     h3 {
@@ -75,6 +75,8 @@ const StyledCertificationItem = styled.div<{ $index?: number }>`
         color: #000000;
         position: relative;
         z-index: 1;
+        text-align: center;
+        width: 100%;
     }
     
     span {
@@ -83,6 +85,7 @@ const StyledCertificationItem = styled.div<{ $index?: number }>`
         color: #333333;
         position: relative;
         z-index: 1;
+        width: 100%;
         
         &:first-of-type {
             font-weight: 500;
@@ -102,7 +105,7 @@ const StyledCertificationItem = styled.div<{ $index?: number }>`
         box-shadow: 0 8px 24px rgba(238, 119, 82, 0.2);
         
         &:hover {
-            box-shadow: 0 12px 32px rgba(238, 119, 82, 0.4);
+            box-shadow: 0 16px 48px rgba(238, 119, 82, 0.5);
         }
     }
     

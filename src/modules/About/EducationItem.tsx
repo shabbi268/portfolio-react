@@ -28,9 +28,9 @@ const StyledEducationItem = styled.div<{ $delay?: number }>`
     perspective: 1000px;
     
     &:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
-        background: rgba(255, 255, 255, 0.12);
+        transform: translateY(-8px) scale(1.12);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+        background: rgba(255, 255, 255, 0.14);
         border-color: rgba(255, 255, 255, 0.4);
     }
     
@@ -39,11 +39,15 @@ const StyledEducationItem = styled.div<{ $delay?: number }>`
         margin-bottom: .5em;
         font-weight: 600;
         color: #000000;
+        text-align: center;
+        width: 100%;
     }
     
     span {
         font-size: 15px;
         color: #333333;
+        text-align: center;
+        width: 100%;
     }
     
     @keyframes fadeInUp {

@@ -42,7 +42,7 @@ const VolunteerWork = ({data, title, index}: IVolunteerWorkProps) => {
                 <StyledBackgroundTopper>
                 <StyledTitle>{title}</StyledTitle>
                 <StyledProjectsGrid>
-                    {data.map((vi, idx) => <VolunteerItem index={idx} title={vi.title} description={vi.description} key={idx} />)}
+                    {data.map((vi, idx) => <VolunteerItem index={idx} title={vi.title} description={vi.description} emoji={vi.emoji} key={idx} />)}
                 </StyledProjectsGrid>
             </StyledBackgroundTopper>
         </StyledCommonSection>

@@ -15,8 +15,8 @@ const StyledWorkplaceItem = styled.div`
     perspective: 1000px;
     
     &:hover {
-        transform: translateY(-10px);
-        filter: drop-shadow(0 10px 25px rgba(255, 140, 0, 0.2));
+        transform: translateY(-10px) scale(1.12);
+        filter: drop-shadow(0 20px 40px rgba(255, 140, 0, 0.3));
     }
 
     > img {
@@ -27,8 +27,8 @@ const StyledWorkplaceItem = styled.div`
         animation: float 3s ease-in-out infinite;
 
         &:hover {
-            box-shadow: 0 8px 30px rgba(255, 140, 0, 0.3);
-            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(255, 140, 0, 0.45);
+            transform: scale(1.1);
         }
     }
 
@@ -78,6 +78,8 @@ const StyledWorkplaceTitle = styled.span`
     padding-top: .5em;
     padding-bottom: .5em;
     animation: fadeInUp 0.8s ease-out 0.2s both;
+    text-align: center;
+    width: 100%;
 
     @keyframes fadeInUp {
         from {
@@ -98,6 +100,8 @@ const StyledWorkplaceDates = styled.div`
     animation: fadeInUp 0.8s ease-out 0.3s both;
     font-size: 0.9em;
     color: ${themeConfig[config.theme].main};
+    text-align: center;
+    width: 100%;
 
     @keyframes fadeInUp {
         from {

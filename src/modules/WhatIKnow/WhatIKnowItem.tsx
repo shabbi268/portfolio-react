@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import { Badge, Tooltip } from '@chakra-ui/react';
 import { config, themeConfig } from '../../config';
 
 
@@ -9,10 +8,13 @@ const StyledWhatIKnowItem = styled.div`
     position: relative;
     animation: fadeInUp 0.8s ease-out;
     transition: all 0.3s ease;
+    overflow: visible;
+    z-index: 10;
 
     &:hover {
-        transform: translateY(-15px) scale(1.08);
-        filter: drop-shadow(0 15px 30px rgba(255, 140, 0, 0.3));
+        transform: translateY(-15px) scale(1.12);
+        filter: drop-shadow(0 20px 48px rgba(255, 140, 0, 0.4));
+        z-index: 20;
     }
 
     > img {
@@ -27,7 +29,7 @@ const StyledWhatIKnowItem = styled.div`
         &:hover {
             opacity: 1;
             filter: grayscale(0%);
-            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.2);
+            box-shadow: 0 12px 36px rgba(255, 140, 0, 0.35);
         }
     }
 
@@ -48,25 +50,6 @@ const StyledWhatIKnowItem = styled.div`
         }
         50% {
             transform: translateY(-8px);
-        }
-    }
-`;
-
-const StyledBadgeContainer = styled.div`
-    position: absolute;
-    top: .25em;
-    left: .25em;
-    z-index: 100;
-    animation: pulse 2s ease-in-out infinite;
-
-    @keyframes pulse {
-        0%, 100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        50% {
-            opacity: 0.8;
-            transform: scale(1.1);
         }
     }
 `;
@@ -92,12 +75,7 @@ export interface IWhatIKnowItem {
 const WhatIKnowItem = ({logo, name, isCurrentlyUsing = false, src}: IWhatIKnowItem) => {
     return (
         <StyledWhatIKnowItem>
-            {isCurrentlyUsing && <StyledBadgeContainer>
-                <Badge variant="solid" colorScheme="red">Using</Badge>
-            </StyledBadgeContainer>}
-            <Tooltip gutter={16} hasArrow label={name} bg={themeConfig[config.theme].darker} placement="top">
-                <img src={src} alt={name} />   
-            </Tooltip>
+            <img title={name} src={src} alt={name} />   
         </StyledWhatIKnowItem>
     )
 }

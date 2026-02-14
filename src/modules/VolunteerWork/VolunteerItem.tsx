@@ -8,6 +8,7 @@ export interface IVolunteerItemProps {
     startingYear?: string;
     endingYear?: string;
     index?: number;
+    emoji?: string;
 }
 
 const StyledVolunteerItem = styled.div<{ $delay?: number }>`
@@ -31,10 +32,10 @@ const StyledVolunteerItem = styled.div<{ $delay?: number }>`
     perspective: 1000px;
     
     &:hover {
-        transform: translateY(-14px) scale(1.01);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        background: rgba(255, 255, 255, 0.12);
-        border-color: rgba(255, 255, 255, 0.25);
+        transform: translateY(-14px) scale(1.12);
+        box-shadow: 0 28px 72px rgba(0, 0, 0, 0.25);
+        background: rgba(255, 255, 255, 0.14);
+        border-color: rgba(255, 255, 255, 0.3);
     }
     
     h3 {
@@ -45,6 +46,8 @@ const StyledVolunteerItem = styled.div<{ $delay?: number }>`
         letter-spacing: 0.3px;
         position: relative;
         z-index: 2;
+        text-align: center;
+        width: 100%;
     }
     
     span {
@@ -55,6 +58,14 @@ const StyledVolunteerItem = styled.div<{ $delay?: number }>`
         flex-grow: 1;
         position: relative;
         z-index: 2;
+        width: 100%;
+    }
+    
+    .emoji-icon {
+        font-size: 3em;
+        margin-bottom: 1em;
+        text-align: center;
+        filter: drop-shadow(0 4px 12px rgba(255, 140, 0, 0.2));
     }
     
     @keyframes fadeInUp {
@@ -82,7 +93,7 @@ const StyledVolunteerItem = styled.div<{ $delay?: number }>`
     }
 `;
 
-const VolunteerItem = ({title, description, index = 0}: IVolunteerItemProps) => {
+const VolunteerItem = ({title, description, index = 0, emoji}: IVolunteerItemProps) => {
     const { ref, tilt } = useTilt();
     const delayTime = 0.1 + (index * 0.15);
     return (
@@ -93,6 +104,7 @@ const VolunteerItem = ({title, description, index = 0}: IVolunteerItemProps) => 
                 transform: `perspective(1000px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
             }}
         >
+            {emoji && <div className="emoji-icon">{emoji}</div>}
             <h3>{title}</h3>
             <span>{description}</span>
         </StyledVolunteerItem>
