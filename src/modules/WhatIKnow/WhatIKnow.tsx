@@ -26,6 +26,9 @@ const StyledToggleButton = styled.button`
 const StyledWhatIKnow = styled.div`
     margin: 3em 0 0 0;
     width: 100%;
+    overflow: visible;
+    position: relative;
+    z-index: 5;
 `;
 
 const StyledWhatIKnowList = styled.div`
@@ -44,12 +47,12 @@ export interface IWhatIKnowProps extends IModuleBase {
     display?: EWhatIKnowDisplay;
 }
 
-const WhatIKnow = ({data, display, title, index}: IWhatIKnowProps) => {
+const WhatIKnow = ({data, display, title, index, alternateBackground}: IWhatIKnowProps) => {
 
     const [isList, setIsList] = useState(display === EWhatIKnowDisplay.LIST);
 
     return (
-        <StyledCommonSection id={`module-${index}`}>
+        <StyledCommonSection id={`module-${index}`} alternateBackground={alternateBackground}>
             <StyledTitle>{title}</StyledTitle>
             {display === EWhatIKnowDisplay.BOTH && <StyledToggleButton onClick={() => setIsList(!isList)}>{!isList ? 'View as list' : 'View as marquee'}</StyledToggleButton>}
             <StyledWhatIKnow>

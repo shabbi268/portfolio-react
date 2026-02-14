@@ -18,9 +18,9 @@ export interface IWorkExperienceProps extends IModuleBase {
     data: IWorkplace[];
 }
 
-const WorkExperience = ({data, title, index}: IWorkExperienceProps) => {
+const WorkExperience = ({data, title, index, alternateBackground}: IWorkExperienceProps) => {
     return (
-        <StyledCommonSection id={`module-${index}`}>
+        <StyledCommonSection id={`module-${index}`} alternateBackground={alternateBackground}>
             <StyledBackgroundCover fadeAmount={40} />
                 <StyledBackgroundTopper>
                 <StyledTitle>{title}</StyledTitle>

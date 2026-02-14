@@ -49,31 +49,115 @@ const StyledHeader = styled.div`
                     radial-gradient(circle at 70% 50%, rgba(35, 166, 213, 0.1) 0%, transparent 50%);
         animation: headerPulse 8s ease-in-out infinite;
         pointer-events: none;
+        will-change: opacity;
     }
 
     @keyframes headerPulse {
         0%, 100% { opacity: 0.5; }
         50% { opacity: 1; }
     }
-`
+`;
+
+const StyledStickyNavBar = styled.nav`
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(255, 140, 0, 0.15);
+    z-index: 999;
+    animation: slideDown 0.6s ease-out;
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 0.8em 1em;
+    }
+`;
+
+const StyledAvailabilityBadge = styled.div`
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(34, 197, 94, 0.1) 100%);
+    border: 2px solid rgba(34, 197, 94, 0.4);
+    padding: 0.6em 1.2em;
+    border-radius: 50px;
+    animation: fadeInDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+    margin-bottom: 1.5em;
+    position: relative;
+    z-index: 10;
+    will-change: transform, opacity;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: #22c55e;
+        border-radius: 50%;
+        animation: pulse 2s ease-in-out infinite;
+        will-change: transform;
+    }
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #166534;
+
+    @keyframes pulse {
+        0%, 100% { 
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% { 
+            transform: scale(1.2);
+            opacity: 0.7;
+        }
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translate3d(0, -30px, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+`;
 
 const StyledName = styled.h1`
     color: #000;
     font-size: 50px;
     font-weight: 400;
-    animation: fadeInDown 1s ease-out;
+    animation: fadeInDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.26s both;
     text-shadow: 2px 2px 4px rgba(255, 140, 0, 0.2);
     position: relative;
     z-index: 10;
+    will-change: transform, opacity;
 
     @keyframes fadeInDown {
         from {
             opacity: 0;
-            transform: translateY(-30px);
+            transform: translate3d(0, -30px, 0);
         }
         to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
         }
     }
 `
@@ -82,18 +166,19 @@ const StyledWorkTitle = styled.h2`
     color: #000;
     font-size: 25px;
     font-weight: 200;
-    animation: fadeInUp 1s ease-out 0.3s both;
+    animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.29s both;
     position: relative;
     z-index: 10;
+    will-change: transform, opacity;
 
     @keyframes fadeInUp {
         from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translate3d(0, 30px, 0);
         }
         to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
         }
     }
 `;
@@ -102,17 +187,29 @@ const StyledImage = styled.img`
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    animation: float 3s ease-in-out infinite;
+    animation: fadeIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.23s both, float 3s ease-in-out 0.23s infinite;
     box-shadow: 0 10px 30px rgba(255, 140, 0, 0.3);
     border: 4px solid rgba(255, 140, 0, 0.3);
     transition: all 0.3s ease;
     position: relative;
     z-index: 10;
+    will-change: transform;
 
     &:hover {
         box-shadow: 0 15px 40px rgba(255, 140, 0, 0.5);
         border-color: rgba(255, 140, 0, 0.6);
         transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translate3d(0, -30px, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
     }
 
     @keyframes float {
@@ -129,30 +226,24 @@ const StyledSocialLinks = styled.div`
     margin-bottom: 2em;
     position: relative;
     z-index: 10;
-    animation: fadeInUp 1s ease-out 0.6s both;
+    animation: fadeIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s both;
     gap: 1.5em;
     flex-wrap: wrap;
     width: 100%;
     padding: 0 1em;
+    will-change: opacity;
     
     > * {
         transition: all 0.3s ease;
-        animation: fadeInUp 1s ease-out 0.7s both;
-
-        &:hover {
-            transform: translateY(-5px) scale(1.1);
-            filter: drop-shadow(0 8px 15px rgba(255, 140, 0, 0.3));
-        }
+        will-change: transform;
     }
 
-    @keyframes fadeInUp {
+    @keyframes fadeIn {
         from {
             opacity: 0;
-            transform: translateY(30px);
         }
         to {
             opacity: 1;
-            transform: translateY(0);
         }
     }
     
@@ -174,6 +265,13 @@ const StyledButtonsContainer = styled.div`
     z-index: 10;
     flex-wrap: wrap;
     padding: 0 1em;
+    animation: fadeIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.32s both;
+    will-change: opacity;
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
     
     @media (max-width: 768px) {
         gap: 1em;
@@ -190,52 +288,44 @@ const StyledButton = styled.button<{ $position?: 'left' | 'center' | 'right' }>`
     cursor: pointer;
     transition: all 0.3s ease;
     color: #000;
+    will-change: transform, opacity;
     
     animation: ${props => {
-        if (props.$position === 'left') return 'bounceFromLeft 1s ease-out';
-        if (props.$position === 'right') return 'bounceFromRight 1s ease-out';
-        return 'bounceFromCenter 1s ease-out';
+        if (props.$position === 'left') return 'bounceFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.32s both';
+        if (props.$position === 'right') return 'bounceFromRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.38s both';
+        return 'bounceFromCenter 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s both';
     }};
     
     @keyframes bounceFromLeft {
         0% {
             opacity: 0;
-            transform: translateX(-100px);
-        }
-        70% {
-            transform: translateX(10px);
+            transform: translate3d(-50px, 0, 0);
         }
         100% {
             opacity: 1;
-            transform: translateX(0);
+            transform: translate3d(0, 0, 0);
         }
     }
     
     @keyframes bounceFromCenter {
         0% {
             opacity: 0;
-            transform: translateY(100px) scale(0.8);
-        }
-        70% {
-            transform: translateY(-5px) scale(1.05);
+            transform: translate3d(0, 30px, 0) scale(0.9);
         }
         100% {
             opacity: 1;
-            transform: translateY(0) scale(1);
+            transform: translate3d(0, 0, 0) scale(1);
         }
     }
     
     @keyframes bounceFromRight {
         0% {
             opacity: 0;
-            transform: translateX(100px);
-        }
-        70% {
-            transform: translateX(-10px);
+            transform: translate3d(50px, 0, 0);
         }
         100% {
             opacity: 1;
-            transform: translateX(0);
+            transform: translate3d(0, 0, 0);
         }
     }
     
@@ -258,7 +348,8 @@ const StyledSocialLink = styled.a`
     cursor: pointer;
     background: linear-gradient(135deg, rgba(255, 140, 0, 0.2) 0%, rgba(35, 166, 213, 0.2) 100%);
     border: 2px solid rgba(255, 140, 0, 0.3);
-    animation: slideUpFromBottom 1s ease-out 0.6s both;
+    animation: slideUpFromBottom 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s both;
+    will-change: transform;
     
     svg {
         width: 24px;
@@ -267,7 +358,7 @@ const StyledSocialLink = styled.a`
     }
     
     &:hover {
-        transform: translateY(-5px) scale(1.1);
+        transform: translate3d(0, -5px, 0) scale(1.1);
         background: linear-gradient(135deg, rgba(255, 140, 0, 0.4) 0%, rgba(35, 166, 213, 0.4) 100%);
         border-color: rgba(255, 140, 0, 0.6);
         filter: drop-shadow(0 8px 15px rgba(255, 140, 0, 0.3));
@@ -276,35 +367,40 @@ const StyledSocialLink = styled.a`
     @keyframes slideUpFromBottom {
         from {
             opacity: 0;
-            transform: translateY(50px);
+            transform: translate3d(0, 30px, 0);
         }
         to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
         }
     }
 `;
 
 const Header = ({data: {name, title, showProfilePic, cvLink, portfolioLink, learningBlog, linkedIn, stackOverflow, facebook, instagram, github}, modules}:IHeaderProps) => {
     return (
-        <StyledHeader>
-            <Navigation modules={modules} />
-            {showProfilePic && <StyledImage src="./assets/profile.jpeg" />}
-            <StyledName>{name}</StyledName>
-            <StyledWorkTitle>{title}</StyledWorkTitle>
-            <StyledButtonsContainer>
-            {cvLink && <StyledButton $position="left" onClick={() => window.open(cvLink)}>📄 Resume</StyledButton>}
-            {portfolioLink && <StyledButton $position="center" onClick={() => window.open(portfolioLink)}>🎨 Portfolio</StyledButton>}
-            {learningBlog && <StyledButton $position="right" onClick={() => window.open(learningBlog)}>📚 My Learning Blog</StyledButton>}
-            </StyledButtonsContainer>
-            {(github || linkedIn || instagram || facebook || stackOverflow) && <StyledSocialLinks>
-               {github && <StyledSocialLink href={github} target="_blank" rel="noopener noreferrer" title="GitHub"><GithubIcon /></StyledSocialLink>}
-               {linkedIn && <StyledSocialLink href={linkedIn} target="_blank" rel="noopener noreferrer" title="LinkedIn"><LinkedInIcon /></StyledSocialLink>}
-               {instagram && <StyledSocialLink href={instagram} target="_blank" rel="noopener noreferrer" title="Instagram"><InstagramIcon /></StyledSocialLink>}
-               {facebook && <StyledSocialLink href={facebook} target="_blank" rel="noopener noreferrer" title="Facebook"><FacebookIcon /></StyledSocialLink>}
-               {stackOverflow && <StyledSocialLink href={stackOverflow} target="_blank" rel="noopener noreferrer" title="Stack Overflow"><StackOverflowIcon /></StyledSocialLink>}
-            </StyledSocialLinks>}
-        </StyledHeader>
+        <>
+            <StyledStickyNavBar>
+                <Navigation modules={modules} />
+            </StyledStickyNavBar>
+            <StyledHeader>
+                <StyledAvailabilityBadge>🟢 Open to Projects</StyledAvailabilityBadge>
+                {showProfilePic && <StyledImage src="./assets/profile.jpeg" />}
+                <StyledName>{name}</StyledName>
+                <StyledWorkTitle>{title}</StyledWorkTitle>
+                <StyledButtonsContainer>
+                {cvLink && <StyledButton $position="left" onClick={() => window.open(cvLink)}>📄 Resume</StyledButton>}
+                {portfolioLink && <StyledButton $position="center" onClick={() => window.open(portfolioLink)}>🎨 Portfolio</StyledButton>}
+                {learningBlog && <StyledButton $position="right" onClick={() => window.open(learningBlog)}>📚 My Learning Blog</StyledButton>}
+                </StyledButtonsContainer>
+                {(github || linkedIn || instagram || facebook || stackOverflow) && <StyledSocialLinks>
+                   {github && <StyledSocialLink href={github} target="_blank" rel="noopener noreferrer" title="GitHub"><GithubIcon /></StyledSocialLink>}
+                   {linkedIn && <StyledSocialLink href={linkedIn} target="_blank" rel="noopener noreferrer" title="LinkedIn"><LinkedInIcon /></StyledSocialLink>}
+                   {instagram && <StyledSocialLink href={instagram} target="_blank" rel="noopener noreferrer" title="Instagram"><InstagramIcon /></StyledSocialLink>}
+                   {facebook && <StyledSocialLink href={facebook} target="_blank" rel="noopener noreferrer" title="Facebook"><FacebookIcon /></StyledSocialLink>}
+                   {stackOverflow && <StyledSocialLink href={stackOverflow} target="_blank" rel="noopener noreferrer" title="Stack Overflow"><StackOverflowIcon /></StyledSocialLink>}
+                </StyledSocialLinks>}
+            </StyledHeader>
+        </>
     )
 }
 

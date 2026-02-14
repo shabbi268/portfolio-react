@@ -3,6 +3,7 @@ import { config, themeConfig } from '../config';
 
 interface IStyledCommonSectionsProps {
     backgroundUrl?: string;
+    alternateBackground?: boolean;
 }
 
 interface IStyledBackgroundCoverProps {
@@ -18,6 +19,7 @@ export const StyledTitle = styled.div`
     margin-bottom: 8px;
     animation: fadeInUp 0.8s ease-out;
     position: relative;
+    letter-spacing: 1px;
 
     &::after {
         content: '';
@@ -29,6 +31,18 @@ export const StyledTitle = styled.div`
         height: 3px;
         background: linear-gradient(90deg, transparent, ${themeConfig[config.theme].main}, transparent);
         border-radius: 2px;
+        animation: expandWidth 0.8s ease-out 0.3s both;
+    }
+
+    @keyframes expandWidth {
+        from {
+            width: 0;
+            opacity: 0;
+        }
+        to {
+            width: 60px;
+            opacity: 1;
+        }
     }
 `;
 
@@ -44,22 +58,31 @@ export const StyledSecondaryTitle = styled.div`
 
 export const StyledCommonSection = styled.div<IStyledCommonSectionsProps>`
     width: 100vw;
-    padding: 3em;
+    padding: 3em 3em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    background: ${props => props.backgroundUrl ? `url('${props.backgroundUrl}')` : 'transparent'};
+    background: ${props => {
+        if (props.backgroundUrl) return `url('${props.backgroundUrl}')`;
+        return props.alternateBackground ? 'linear-gradient(135deg, rgba(255, 140, 0, 0.05) 0%, rgba(35, 166, 213, 0.05) 100%)' : 'transparent';
+    }};
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    animation: fadeInUp 1s ease-out;
-    border-top: 1px solid rgba(255, 140, 0, 0.1);
-    transition: all 0.3s ease;
+    animation: fadeInUp 1.2s ease-out;
+    border-top: 1px solid rgba(255, 140, 0, 0.15);
+    border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    transition: all 0.4s ease;
+    scroll-behavior: smooth;
 
     &:hover {
-        box-shadow: inset 0 0 30px rgba(255, 140, 0, 0.05);
+        box-shadow: inset 0 0 40px rgba(255, 140, 0, 0.08);
+    }
+
+    @media (max-width: 768px) {
+        padding: 2em 1.5em;
     }
 `;
 
@@ -98,5 +121,15 @@ export const StyledParagraph = styled.p<IStyledParagraphOverridePrpops>`
     padding-top: ${props => `${props.paddingTop || 1}em`};
     padding-bottom: ${props => `${props.paddingBottom || 1}em`};
     animation: fadeInUp 0.8s ease-out 0.3s both;
-    line-height: 1.6;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+        line-height: 1.7;
+    }
 `;

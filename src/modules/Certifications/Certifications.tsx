@@ -81,11 +81,11 @@ export interface ICertificationsProps extends IModuleBase {
     display?: ECertificationsDisplay;
 }
 
-const Certifications = ({data, display, title, index}: ICertificationsProps) => {
+const Certifications = ({data, display, title, index, alternateBackground}: ICertificationsProps) => {
     const [isList, setIsList] = useState(display === ECertificationsDisplay.LIST);
 
     return (
-        <StyledCommonSection id={`module-${index}`}>
+        <StyledCommonSection id={`module-${index}`} alternateBackground={alternateBackground}>
                 <StyledBackgroundTopper>
                     <StyledTitle>{title}</StyledTitle>
                 </StyledBackgroundTopper>

@@ -39,9 +39,9 @@ const StyledAbout = styled.div`
     }
 `;
 
-const About = ({data, title, index}: IAboutProps) => {
+const About = ({data, title, index, alternateBackground}: IAboutProps) => {
     return (
-        <StyledCommonSection id={`module-${index}`}>
+        <StyledCommonSection id={`module-${index}`} alternateBackground={alternateBackground}>
             <StyledAbout>
                 <StyledTitle>{title}</StyledTitle>
                 <StyledParagraph paddingTop="0">{data.about}</StyledParagraph>

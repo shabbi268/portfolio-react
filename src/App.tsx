@@ -114,17 +114,18 @@ function App() {
       <StyledApp>
         <Header data={data.header} modules={data.modules} />
         {data.modules.map((module, index) => {
+          const alternateBackground = index % 2 === 1;
           switch (module.type) {
             case Module.ABOUT:
-              return <About {...module as Omit<IAboutProps,'index'>} index={index} key={index} />
+              return <About {...module as Omit<IAboutProps,'index'>} index={index} alternateBackground={alternateBackground} key={index} />
             case Module.WORK_EXPERIENCE:
-              return <WorkExperience {...module as Omit<IWorkExperienceProps,'index'>} index={index} key={index} />
+              return <WorkExperience {...module as Omit<IWorkExperienceProps,'index'>} index={index} alternateBackground={alternateBackground} key={index} />
             case Module.WHAT_I_KNOW:
-              return <WhatIKnow {...module as Omit<IWhatIKnowProps,'index'>} index={index} key={index} />
+              return <WhatIKnow {...module as Omit<IWhatIKnowProps,'index'>} index={index} alternateBackground={alternateBackground} key={index} />
             case Module.VOLUNTEERING:
-              return <VolunteerWork {...module as Omit<IVolunteerWorkProps,'index'>} index={index} key={index} />
+              return <VolunteerWork {...module as Omit<IVolunteerWorkProps,'index'>} index={index} alternateBackground={alternateBackground} key={index} />
             case Module.CERTIFICATIONS:
-              return <Certifications {...module as Omit<ICertificationsProps,'index'>} index={index} key={index} />
+              return <Certifications {...module as Omit<ICertificationsProps,'index'>} index={index} alternateBackground={alternateBackground} key={index} />
             default:
               return <></>
           }

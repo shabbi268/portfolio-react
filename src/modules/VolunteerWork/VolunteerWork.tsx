@@ -35,9 +35,9 @@ const StyledProjectsGrid = styled.div`
     }
 `;
 
-const VolunteerWork = ({data, title, index}: IVolunteerWorkProps) => {
+const VolunteerWork = ({data, title, index, alternateBackground}: IVolunteerWorkProps) => {
     return (
-        <StyledCommonSection id={`module-${index}`}>
+        <StyledCommonSection id={`module-${index}`} alternateBackground={alternateBackground}>
                 <StyledBackgroundCover fadeAmount={40} />
                 <StyledBackgroundTopper>
                 <StyledTitle>{title}</StyledTitle>
